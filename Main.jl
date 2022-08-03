@@ -78,21 +78,21 @@ Let's start with a user file dialog and conversion of text into Data Frame to pr
 """
 
 # ╔═╡ 6fcbc296-4c99-4c75-8dee-b6cf0e4d1b3d
-@bind important_document PlutoUI.FilePicker()
+@bind mainPath PlutoUI.FilePicker()
 
 # ╔═╡ bcecf309-d98c-489b-85e6-7d64bcfdbbae
 md"""Whole main file or selection inside, each file must have R_######.TXT name format data file!
 """
 
 # ╔═╡ 37f27fad-5a6f-4e11-b544-0898ba0ac428
-We can have check boxes here:
+md"""We can have check boxes here:"""
 
 # ╔═╡ 3bf4911d-e93b-4c38-9713-62336721357e
 md"""Would you like to process all the main file that includes different experiments with many indents? // $(@bind allFiles PlutoUI.CheckBox(default=true))
 """
 
 # ╔═╡ d7819864-1bbb-408e-bf6f-ceed2e18cf31
-path
+path=mainPath
 
 # ╔═╡ 4e972f05-c195-4f9a-822b-28bee57afcee
 md"""Then here we need dropbox for file selection if it is  unclicked to process selection of files
@@ -339,12 +339,12 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─d4f91aea-c34b-427e-917b-05b2d7f1e78e
 # ╟─470be45a-a975-4fac-91f1-8b989a588203
 # ╟─6fcbc296-4c99-4c75-8dee-b6cf0e4d1b3d
-# ╠═bcecf309-d98c-489b-85e6-7d64bcfdbbae
-# ╠═37f27fad-5a6f-4e11-b544-0898ba0ac428
+# ╟─bcecf309-d98c-489b-85e6-7d64bcfdbbae
+# ╟─37f27fad-5a6f-4e11-b544-0898ba0ac428
 # ╟─3bf4911d-e93b-4c38-9713-62336721357e
-# ╠═d7819864-1bbb-408e-bf6f-ceed2e18cf31
+# ╟─d7819864-1bbb-408e-bf6f-ceed2e18cf31
 # ╟─4e972f05-c195-4f9a-822b-28bee57afcee
-# ╠═f257623c-9cb4-4ed9-992a-06cfddcab56d
+# ╟─f257623c-9cb4-4ed9-992a-06cfddcab56d
 # ╠═dec5ef0a-4cf1-4185-894c-22e3cf45266c
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
