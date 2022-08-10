@@ -74,7 +74,7 @@ On the other hand, we will try to make the calculations can be done whichever ex
 
 # ╔═╡ 470be45a-a975-4fac-91f1-8b989a588203
 md"""
-Let's start with a user file dialog and conversion of text into Data Frame to prepare them calculations.
+Let's start with a user file dialog and conversion of text into Data Frame to prepare them to calculations.
 """
 
 # ╔═╡ 6fcbc296-4c99-4c75-8dee-b6cf0e4d1b3d
@@ -337,7 +337,7 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─0cd676ef-95fc-40e2-8052-28bd4387f2fb
 # ╟─d5176b4d-7f49-4dc4-b316-2d254b0d3e58
 # ╟─d4f91aea-c34b-427e-917b-05b2d7f1e78e
-# ╟─470be45a-a975-4fac-91f1-8b989a588203
+# ╠═470be45a-a975-4fac-91f1-8b989a588203
 # ╟─6fcbc296-4c99-4c75-8dee-b6cf0e4d1b3d
 # ╟─bcecf309-d98c-489b-85e6-7d64bcfdbbae
 # ╟─37f27fad-5a6f-4e11-b544-0898ba0ac428
