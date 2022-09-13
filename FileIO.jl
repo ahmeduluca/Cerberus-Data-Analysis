@@ -49,20 +49,17 @@ id1 = signal_connect(button_clicked_callback, bySel, "clicked")
 ## Process with taken paths.. read file -> DataFrame/ or just arrays (16 inputs-max-) 
 #-> calculations & new Calculated DataFrame (70 columns of calculation) 
 #-> write to file as CSV /& txt -> draw graphs.. 
-
+## data should be separated / indexed for segments -> Approach, Load, Hold at Peak Load, First Unload, Drift, Full Unload..
 function readInp(raws)
 ##READING FILES
 nofInd=length(raws)
-for ind in raws
-    mat,head=readdlm(ind,',',Float64,header=true,)
-    global input=DataFrame(mat, vec(head))
+    for ind in raws
+        mat,head=readdlm(ind,',',Float64,header=true,)
+        global input=DataFrame(mat, vec(head))
             ##PUT DATA IN DATAFRAME
-end
+    end
 end
 
-
-function zeroPt()
-end
 
 ##Calibration Values & Calibration Array..
 
