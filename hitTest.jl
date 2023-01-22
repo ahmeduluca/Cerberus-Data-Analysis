@@ -2,11 +2,12 @@ using GLMakie
 using GLMakie.GLFW
 using GLMakie: to_native
 
+function zeroPt(rx, ry)
 #imitialize plot
-rx = 0:0.5:600
-ry = rand(length(rx)) .+ rx .^ 2 .+ 3
+   # rx = 0:0.5:600
+    #ry = rand(length(rx)) .+ rx .^ 2 .+ 3
 
-fig = Figure(resolution = (1440,900))
+    fig = Figure(resolution = (1440,900))
 
 #add Axis
 
@@ -91,7 +92,7 @@ on(spoint) do z
         if !isempty(index)
             println("Selection is $(rx[inXax[index[1]]]),$(ry[inXax[index[1]]])")
             tb.displayed_string="Selection is $(round(rx[inXax[index[1]]],digits=2)),$(round(ry[inXax[index[1]]],digits=2))"
-            global returnindex=inXax[index[1]]
+            return inXax[index[1]]
         else 
             tb.displayed_string="Please try to select a valid data point!"
         end
@@ -102,3 +103,5 @@ end
 #t = @task begin; ; end
 #ret = @task begin; println("done"); end
 #schedule(t); wait(t)
+
+end

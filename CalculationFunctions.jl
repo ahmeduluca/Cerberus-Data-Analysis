@@ -1,5 +1,6 @@
 import Interpolations: interpolate, gradient, Gridded, Linear
 import Statistics: mean
+include("hitTest.jl")
 #=
 Data Calculation Functions
 #
@@ -299,8 +300,8 @@ end
 Zero Point Determination; live GUI need here!
 after determination return 3 displacement 3 load and time arrays with zeroed form
 =#
-function zeroDetermination()
-
+function zeroDetermination(dispNano, rangedLoad)
+    return zeroPt(dispNano, rangedLoad)
 end
 
 #=
@@ -309,7 +310,7 @@ Convert Load data in voltage to mN
 function loadConvert(nulledLoad, loadCalDC)
     loadMn = convert(Array{Union{Missing,Float64}},nulledLoad)
     for i in 1:length(nulledLoad)
-        loadMn[i]=nulledLoad[i]*loadCal/1000
+        loadMn[i]=nulledLoad[i]*loadCalDC/1000
     end
     return loadMn
 end
