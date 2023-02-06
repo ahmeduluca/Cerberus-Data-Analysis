@@ -4,6 +4,8 @@ using DataFrames
 using DelimitedFiles
 using CSV
 using GLMakie
+using XLSX
+
 # Choose whether all the txts or by selection of files -> hold filepath names in a container then read
 # and process
 global rawPaths=[]
@@ -47,6 +49,18 @@ end
 end
 #BUTTON CLICKED EVENT CALLBACK
 
+function writer(file, data)
+    file=file*raw"\processed.xlsx"
+    XLSX.openxlsx(file, mode="w") do xl
+        XLSX.rename!(xl[1],basename(rawPaths[1]))
+        for i in eachindex(data)
+            if i>1
+                XLSX.addsheet!(xl, basename(rawPaths[i]))
+            end
+            XLSX.writetable!(xl[i], collect(eachcol(data[i])), names(data[i]))
+        end
+    end
+end
 
 
 
